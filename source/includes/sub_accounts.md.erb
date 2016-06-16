@@ -1,20 +1,20 @@
 <h1 id="sub-accounts"><%= t('sub_accounts.title') %></h1>
 
-<%= t('sub_accounts.header')%>
+<%= t('sub_accounts.header') %>
 
-<%= t('sub_accounts.kind.name')%> | <%= t('description')%>
+<%= t('sub_accounts.kind.name') %> | <%= t('description') %>
 ------------- | -----------
 <% data.kinds.es.each do |kind|%>
   `<%= kind.name %>` | <%= kind.description %>
 <% end %>
 
-<h2 id="sub-account-object"><%= t('sub_accounts.object.title')%></h2>
+<h2 id="sub-account-object"><%= t('sub_accounts.object.title') %></h2>
 
 
-<h2 id="sub-account-scrape"><%= t('sub_accounts.scrape.title')%></h2>
+<h2 id="sub-account-scrape"><%= t('sub_accounts.scrape.title') %></h2>
 
 
-<%= t('sub_accounts.scrape.header')%>
+<%= t('sub_accounts.scrape.header') %>
 
 ```shell
 $ curl <%= data.examples.url %>/scrape/sub-accounts \
@@ -28,7 +28,7 @@ $ curl <%= data.examples.url %>/scrape/sub-accounts \
 ```ruby
 require 'finciero-api'
 
-api = Finciero::API::Client.new('<%= t(:token_placeholder)%>')
+api = Finciero::API::Client.new('<%= t(:token_placeholder) %>')
 bank_account = Finciero::BankAccount.new(
   username: '<%= data.examples.username%>',
   password: '<%= data.examples.password%>',
