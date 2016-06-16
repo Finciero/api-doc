@@ -1,4 +1,7 @@
-all: deploy
+all: server
+
+server:
+	@bundle exec middleman server
 
 build:
 	@echo "[build] Building static site"
@@ -11,4 +14,4 @@ deploy: build
 		--cache-control "public, max-age=86400"\
 		--region sa-east-1
 
-.PHONY: build deploy all
+.PHONY: build deploy all server
