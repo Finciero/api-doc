@@ -30,7 +30,7 @@ es:
       No compartas tus API keys
       en aplicaciones con acceso público, como Github, código de cliente (Front-End), etc.
 
-      <aside class="notice">Si **no** estás ocupando uno de nuestros SDKs, debes adjuntar manualmente
+      <aside class="notice">Si <b>no</b> estás ocupando uno de nuestros SDKs, debes adjuntar manualmente
       tu llave secreata (API key) dentro del Header HTTP <code>Authorization</code>, favor continue leyendo</aside>
     footer: |
       La autenticación con nuestra API se realiza por medio de **Bearer** Auth. Debes adjuntar tu API key

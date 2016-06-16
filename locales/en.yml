@@ -26,9 +26,9 @@ en:
       so be sure to keep them secret! Do not share your secret API keys in publicly accessible
       areas such GitHub, client-side code, and so forth.
 
-      <aside class="notice">If you are not using one of our SDKs, you must manually send
+      <aside class="notice">If you are <b>not</b> using one of our SDKs, you must manually send
       your API key inside the <code>Authorization</code> header, please continue reading</aside>
     footer: |
-      Authentication to the API is performed via bearer auth. Provide your API key as the 
+      Authentication to the API is performed via **bearer auth**. Provide your API key as the 
       authorization header.
 
