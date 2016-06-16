@@ -1,0 +1,34 @@
+---
+en:
+  token_placeholder: 'your-api-token'
+  description: Description
+  sub_accounts:
+    title: 'SubAccounts'
+    kind:
+      name: 'Kind'
+    header: |
+      Every bank account has one or more sub accounts, like checking accounts, creditline accounts,
+      national and international credit cards, etc.
+
+      The types of sub accounts are the following:
+    object:
+      title: SubAccount Object
+    scrape:
+      title: Scrape SubAccounts
+      header: |
+        To get the sub account list, send the following request:
+
+  authentication:
+    title: Authentication
+    header: |
+      Authenticate your account when using the API by including your secret API key in the request.
+      You can manage your API keys in the Dashboard. Your API keys carry many privileges,
+      so be sure to keep them secret! Do not share your secret API keys in publicly accessible
+      areas such GitHub, client-side code, and so forth.
+
+      <aside class="notice">If you are not using one of our SDKs, you must manually send
+      your API key inside the <code>Authorization</code> header, please continue reading</aside>
+    footer: |
+      Authentication to the API is performed via bearer auth. Provide your API key as the 
+      authorization header.
+

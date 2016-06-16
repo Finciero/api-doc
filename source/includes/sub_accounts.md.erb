@@ -1,0 +1,29 @@
+<h1 id="sub-accounts"><%= t('sub_accounts.title') %></h1>
+
+<%= t('sub_accounts.header')%>
+
+<%= t('sub_accounts.kind.name')%> | <%= t('description')%>
+------------- | -----------
+<% data.kinds.es.each do |kind|%>
+  `<%= kind.name %>` | <%= kind.description %>
+<% end %>
+
+<h2 id="sub-account-object"><%= t('sub_accounts.object.title')%></h2>
+
+
+<h2 id="sub-account-scrape"><%= t('sub_accounts.scrape.title')%></h2>
+
+
+<%= t('sub_accounts.scrape.header')%>
+
+```shell
+$ curl https://api.finciero.com/scrape/sub-accounts \
+  -H "Authorization: Bearer <%= t(:token_placeholder) %>" \
+  -d data[username]=<%= data.examples.username %> \
+  -d data[password]=<%= data.examples.password %> \
+  -d data[bank]=<%= data.examples.bank %> \
+  -d meta[client][my]="value"
+```
+
+
+

@@ -1,0 +1,18 @@
+en:
+- name: checking
+  description: Indicates that the sub account is a checking account
+- name: credit_line
+  description: Indicates that the sub account is a Credit Line
+- name: credit_card
+  description: Indicates that the sub account is a Credit Card
+- name: vista
+  description: Indicates that the sub account is a Vista account
+es:
+- name: checking
+  description: Indica que la sub cuenta es una cuenta corriente
+- name: credit_line
+  description: Indica que la sub cuenta es una línea de crédito
+- name: credit_card
+  description: Indica que la sub cuenta es una tarjeta de crédito
+- name: vista
+  description: Indica que la sub cuenta es una cuenta vista
