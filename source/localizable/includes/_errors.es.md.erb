@@ -1,0 +1,18 @@
+<h1 id="errors">Errores</h1>
+
+**Respuestas de errores del cliente**
+
+<table>
+<thead>
+<th>HTTP</th>
+<th width="120px">Error ID</th>
+<th>Descripción</th>
+</thead>
+<% data.errors.es.each do |error| %>
+  <tr>
+    <td><%= error.status %></td>
+    <td><code class="prettyprint"><%= error.id %></code></td>
+    <td><%= error.description %></td>
+  </tr>
+<% end %>
+</table>

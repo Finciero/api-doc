@@ -18,6 +18,9 @@ set :fonts_dir, 'fonts'
 # Livereload
 activate :livereload
 
+# i18n
+activate :i18n, mount_at_root: :es, langs: [:en, :es]
+
 # Activate the syntax highlighter
 activate :syntax
 

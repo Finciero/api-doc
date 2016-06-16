@@ -6,6 +6,7 @@ language_tabs:
   - ruby
   - python
   - javascript
+  - go
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -17,7 +18,7 @@ includes:
 search: true
 ---
 
-# Introduction
+<h1 id="introduction">Introducción</h1>
 
 Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
@@ -51,6 +52,21 @@ curl "api_endpoint_here"
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
+```
+
+```go
+package main
+
+type Kittn struct {}
+
+func (k * Kittn) Authorize (token string) {
+
+}
+
+func main() {
+  kittn := &Kittn{}
+  kittn.Athorize("meowmeowmeow")
+}
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
@@ -185,5 +201,5 @@ This endpoint retrieves a specific kitten.
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+`ID` | The ID of the kitten to retrieve
 

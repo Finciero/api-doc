@@ -1,0 +1,63 @@
+---
+en:
+- status: 400
+  id: bad_request
+  description: 'request invalid, validate usage and try again'
+- status: 401
+  id: unauthorized
+  description: 'request not authenticated, API token is missing, invalid or expired'
+- status: 402
+  id: delinquent
+  description: 'the account has become delinquent as a result of non-payment'
+- status: 403
+  id: forbidden
+  description: 'request not authorized, provided credentials do not provide access to specified resource'
+- status: 403
+  id: suspended
+  description: 'request not authorized, account or application was suspended.'
+- status: 404
+  id: not_found
+  description: 'request failed, the specified resource does not exist'
+- status: 406
+  id: not_acceptable
+  description: 'request failed, set <code class="prettyprint">Accept: application/vnd.finciero+json; version=1</code> header and try again'
+- status: 422
+  id: invalid_params
+  description: 'request failed, validate parameters and try again'
+- status: 422
+  id: missing_params
+  description: 'request failed, some params are missing, validate parameters and try again'
+- status: 429
+  id: rate_limit
+  description: 'request failed, wait for rate limits to reset and try again, see <a href="/#rate-limits">rate limits</a>'
+es:
+- status: 400
+  id: bad_request
+  description: 'Petición inválida, verificar su uso e intentar de nuevo'
+- status: 401
+  id: unauthorized
+  description: 'Petición no autenticada. Su API Token no es válido, ha caducado o no ha sido enviado'
+- status: 402
+  id: delinquent
+  description: 'Su cuenta ha sido marcada como "delinquent" dado que no se ha pagado la mensualidad'
+- status: 403
+  id: forbidden
+  description: 'Su petición no tiene los permisos suficientes para acceder al recurso solicitado, revise su API Token'
+- status: 403
+  id: suspended
+  description: 'Petición no autorizada, su cuenta ha sido suspendida'
+- status: 404
+  id: not_found
+  description: 'La petición falló, dado que el recurso solicitado no existe'
+- status: 406
+  id: not_acceptable
+  description: 'La petición falló, envíe el header <code class="prettyprint">Accept: application/vnd.finciero+json; version=1</code> y vuelva a intentarlo'
+- status: 422
+  id: invalid_params
+  description: 'La petición falló, valide los parámetros enviados y vuelva a intentarlo'
+- status: 422
+  id: missing_params
+  description: 'La petición falló, verifique que está enviando todos los parámetros necesarios para acceder al recurso y vuelva a intentarlo'
+- status: 429
+  id: rate_limit
+  description: 'La petición falló, espere para que los limites de acceso a los recursos (rate limit) se reinicien y vuelta a intentar. Ver <a href="/#rate-limits">limites de acceso</a>'

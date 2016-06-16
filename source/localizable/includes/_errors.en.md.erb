@@ -1,0 +1,19 @@
+# Errors
+
+**Client Error Responses**
+
+
+<table>
+<thead>
+<th>HTTP</th>
+<th width="120px">Error ID</th>
+<th>Description</th>
+</thead>
+<% data.errors.en.each do |error| %>
+  <tr>
+    <td><%= error.status %></td>
+    <td><code class="prettyprint"><%= error.id %></code></td>
+    <td><%= error.description %></td>
+  </tr>
+<% end %>
+</table>
