@@ -48,11 +48,11 @@ html, body {
 
 @mixin embossed-bg {
   background:
-    linear-gradient(to bottom, rgba(#000, 0.2), rgba(#000, 0) 8px),
-    linear-gradient(to top, rgba(#000, 0.2), rgba(#000, 0) 8px),
-    linear-gradient(to bottom, rgba($nav-embossed-border-top, 1), rgba($nav-embossed-border-top, 0) 1.5px),
-    linear-gradient(to top, rgba($nav-embossed-border-bottom, 1), rgba($nav-embossed-border-bottom, 0) 1.5px),
-    $nav-subitem-bg;
+    linear-gradient(to bottom, rgba($search-box-border-color, 0.2), rgba($search-box-border-color, 0) 8px),
+    linear-gradient(to top, rgba($nav-embossed-border-bottom, 0.2), rgba($nav-embossed-border-bottom, 0) 8px),
+    linear-gradient(to bottom, rgba($search-box-bg-color, 1), rgba($search-box-bg-color, 0) 1.5px),
+    linear-gradient(to top, rgba($nav-embossed-border-bottom, 1), rgba($search-box-bg-color, 0) 1.5px),
+    $nav-embossed-border-bottom;
 }
 
 .tocify-wrapper {
@@ -68,7 +68,6 @@ html, body {
   width: $nav-width;
   background-color: $nav-bg;
   font-size: 13px;
-  font-weight: bold;
 
   // language selector for mobile devices
   .lang-selector {
@@ -77,6 +76,11 @@ html, body {
       padding-top: 0.5em;
       padding-bottom: 0.5em;
     }
+  }
+
+  img#logo {
+    height: 90px;
+    margin: auto;
   }
 
   // This is the logo at the top of the ToC
@@ -97,7 +101,7 @@ html, body {
       margin: $nav-v-padding $nav-padding;
       width: $nav-width - 30;
       outline: none;
-      color: $nav-text;
+      color: $search-text-color;
       border-radius: 0; /* ios has a default border radius */
     }
 
@@ -105,7 +109,7 @@ html, body {
       position: absolute;
       top: 17px;
       left: $nav-padding;
-      color: $nav-text;
+      color: $search-text-color;
       @extend %icon-search;
     }
   }
@@ -131,12 +135,13 @@ html, body {
     @include embossed-bg;
 
     li {
+      color: $search-results-text-color;
       margin: 1em $nav-padding;
       line-height: 1;
     }
 
     a {
-      color: $nav-text;
+      color: $search-results-links-color;
       text-decoration: none;
 
       &:hover {
@@ -183,7 +188,6 @@ html, body {
   .tocify-subheader {
     display: none; // tocify will override this when needed
     background-color: $nav-subitem-bg;
-    font-weight: 500;
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
       font-size: 12px;
@@ -358,10 +362,9 @@ html, body {
     font-size: 30px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid #ccc;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid $borders-color;
     background-image: linear-gradient(to bottom, #fff, #f9f9f9);
   }
 
@@ -470,20 +473,18 @@ html, body {
   aside {
     padding-top: 1em;
     padding-bottom: 1em;
-    text-shadow: 0 1px 0 lighten($aside-notice-bg, 15%);
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
     line-height: 1.6;
+    color: $aside-text-color;
 
     &.warning {
       background-color: $aside-warning-bg;
-      text-shadow: 0 1px 0 lighten($aside-warning-bg, 15%);
     }
 
     &.success {
       background-color: $aside-success-bg;
-      text-shadow: 0 1px 0 lighten($aside-success-bg, 15%);
     }
   }
 
@@ -509,9 +510,8 @@ html, body {
     padding: 2px;
     margin: -2px;
     border-radius: 4px;
-    border: 1px solid #F7E633;
-    text-shadow: 1px 1px 0 #666;
-    background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
+    border: 1px solid #ff9800;
+    background-color: transparent;
   }
 }
 
@@ -533,7 +533,6 @@ html, body {
     clear:right;
 
     box-sizing: border-box;
-    text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
 
     @extend %right-col;
 
