@@ -332,6 +332,15 @@ html, body {
   position: relative;
   z-index: 30;
 
+  a {
+    color: $search-results-links-color;
+    text-decoration: none;
+
+    &:hover {
+      color: #292e31;
+    }
+  }
+
   &:after {
     content: '';
     display: block;
@@ -365,7 +374,6 @@ html, body {
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
     border-top: 1px solid $borders-color;
-    background-image: linear-gradient(to bottom, #fff, #f9f9f9);
   }
 
   h1:first-child, div:first-child + h1 {
