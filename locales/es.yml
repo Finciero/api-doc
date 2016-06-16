@@ -1,7 +1,7 @@
 ---
 es:
   token_placeholder: 'tu-api-token'
-  description: descripción
+  description: Descripción
   sub_accounts:
     title: SubCuentas
     kind:
@@ -21,16 +21,18 @@ es:
         hacer la siguiente petición:
 
   authentication:
-    title: Authenticación
+    title: Autenticación
     header: |
-      Authenticate your account when using the API by including your secret API key in the request.
-      You can manage your API keys in the Dashboard. Your API keys carry many privileges,
-      so be sure to keep them secret! Do not share your secret API keys in publicly accessible
-      areas such GitHub, client-side code, and so forth.
+      Cuanto utilizas nuestra API, debes autenticar tus peticiones incluyendo tu llave secreta (**API key**).
+      Puedes administrar tus llaves secretas desde tu Dashboard. Tus llaves secretas otorgan acceso
+      a nuestro servicios, asi que asegúrate de de mantenerlas en secreto!
 
-      <aside class="notice">If you are not using one of our SDKs, you must manually send
-      your API key inside the <code>Authorization</code> header, please continue reading</aside>
+      No compartas tus API keys
+      en aplicaciones con acceso público, como Github, código de cliente (Front-End), etc.
+
+      <aside class="notice">Si **no** estás ocupando uno de nuestros SDKs, debes adjuntar manualmente
+      tu llave secreata (API key) dentro del Header HTTP <code>Authorization</code>, favor continue leyendo</aside>
     footer: |
-      Authentication to the API is performed via bearer auth. Provide your API key as the 
-      authorization header.
+      La autenticación con nuestra API se realiza por medio de **Bearer** Auth. Debes adjuntar tu API key
+      dentro del header de autorización.
 
