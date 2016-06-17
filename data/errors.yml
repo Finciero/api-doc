@@ -24,12 +24,12 @@ en:
 - status: 422
   id: invalid_params
   description: 'request failed, validate parameters and try again'
-- status: 422
-  id: missing_params
-  description: 'request failed, some params are missing, validate parameters and try again'
 - status: 429
   id: rate_limit
   description: 'request failed, wait for rate limits to reset and try again, see <a href="/#rate-limits">rate limits</a>'
+- status: 500
+  id: internal_error
+  description: 'request failed, something failed on our end, save your <code>request_id</code> to check what happened'
 es:
 - status: 400
   id: bad_request
@@ -55,9 +55,9 @@ es:
 - status: 422
   id: invalid_params
   description: 'La petición falló, valide los parámetros enviados y vuelva a intentarlo'
-- status: 422
-  id: missing_params
-  description: 'La petición falló, verifique que está enviando todos los parámetros necesarios para acceder al recurso y vuelva a intentarlo'
 - status: 429
   id: rate_limit
   description: 'La petición falló, espere para que los limites de acceso a los recursos (rate limit) se reinicien y vuelta a intentar. Ver <a href="/#rate-limits">limites de acceso</a>'
+- status: 500
+  id: internal_error
+  description: 'La petición falló, ocurrió un error de nuestra parte, guarda tu <code>request_id</code> para saber lo que pasó'
