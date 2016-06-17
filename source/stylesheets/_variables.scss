@@ -89,11 +89,11 @@ $phone-width: $tablet-width - $nav-width; // min width before reverting to mobil
 
 // OTHER
 ////////////////////
-$nav-active-shadow: transparent;
+$nav-active-shadow: none;
 $nav-footer-border-color: #666;
 $nav-embossed-border-top: #fafcfc;
 $nav-embossed-border-bottom: $nav-embossed-border-top;
-$main-embossed-text-shadow: transparent;
+$main-embossed-text-shadow: none;
 $borders-color: #f0f4f7;
 $search-box-border-color: $borders-color;
 $search-box-bg-color: $nav-embossed-border-top;
