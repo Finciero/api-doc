@@ -3,8 +3,12 @@ all: server
 server:
 	@bundle exec middleman server
 
-build:
-	@echo "[build] Building static site"
+diagrams:
+	@echo "[diagrams] Building with mermaid ..."
+	@mermaid -o source/images source/diagrams/*
+
+build: diagrams
+	@echo "[build] Building static site ..."
 	@bundle exec middleman build --clean
 
 deploy: build
