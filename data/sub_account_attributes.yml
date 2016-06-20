@@ -1,0 +1,45 @@
+---
+es:
+  - name: id
+    description: Identifica únicamente a la sub cuenta
+    type: string
+  - name: name
+    description: Nombre de la sub cuenta.
+    type: string
+  - name: kind
+    description: Tipo de sub cuenta.
+    type: string
+  - name: date
+    description: Fecha que identifica el día y hora en que fue actualizada la sub cuenta
+    type: string
+  - name: currency
+    description: Indica el tipo de moneda del balance, si es nacional o internacional
+    type: string
+  - name: number
+    description: Numero de cuenta
+    type: string
+  - name: balance
+    description: Balance de la cuenta
+    type: string
+en:
+  - name: id
+    description: Unique identifier for the sub account
+    type: string
+  - name: name
+    description: Sub account's name
+    type: string
+  - name: kind
+    description: 'Sub Account type, i.e. <code>checking</code>,<code>credit_card</code>, etc.'
+    type: string
+  - name: date
+    description: Date of the scraping
+    type: string
+  - name: currency
+    description: Indicates if the balance has national or international currency
+    type: string
+  - name: number
+    description: Account's number
+    type: string
+  - name: balance
+    description: Account's balance
+    type: string
