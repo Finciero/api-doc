@@ -4,7 +4,7 @@ es:
   token_placeholder: 'tu-api-token'
   description: Descripción
   sub_accounts:
-    title: SubCuentas
+    title: Subcuentas
     kind:
       name: 'Tipo (kind)'
     header: |
@@ -17,9 +17,9 @@ es:
       <aside class="warning">Los distintos tipos se encuentran listados en <code>inglés</code>,
       ya que las interacciones con nuestro servicio no aceptan palabras en español</aside>
     object:
-      title: Objeto SubCuenta
+      title: Objeto Subcuenta
     scrape:
-      title: Obtener SubCuentas
+      title: Obtener Subcuentas
       header: |
         Para obtener la lista de cuentas de una cuenta bancaria, se debe 
         hacer la siguiente petición:
