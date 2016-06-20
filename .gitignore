@@ -22,3 +22,6 @@ build/
 _yardoc
 doc/
 .idea/
+
+source/images/*_en
+source/images/*_es
