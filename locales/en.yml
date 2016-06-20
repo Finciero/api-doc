@@ -1,6 +1,7 @@
 ---
 en:
   token_placeholder: 'your-api-token'
+  attributes: Attributes
   description: Description
   sub_accounts:
     title: 'SubAccounts'
