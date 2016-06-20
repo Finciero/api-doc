@@ -3,13 +3,27 @@
 <%= t('sub_accounts.header') %>
 
 <%= t('sub_accounts.kind.name') %> | <%= t('description') %>
-------------- | -----------
-<% data.kinds.es.each do |kind|%>
+-------------: | -----------
+<% data.kinds[I18n.locale].each do |kind|%>
   `<%= kind.name %>` | <%= kind.description %>
 <% end %>
 
 <h2 id="sub-account-object"><%= t('sub_accounts.object.title') %></h2>
 
+<table>
+  <thead>
+  <th> <%= t(:attributes) %> </th>
+  <th></th>
+  </thead>
+  <% data.sub_account_attributes[I18n.locale].each do |attribute| %>
+  <tr>
+    <td style="text-align: right;"> 
+      <b><%= attribute.name %></b> 
+    </td>
+    <td> <%= attribute.description %> </td>
+  </tr>
+  <% end %>
+</table>
 
 <h2 id="sub-account-scrape"><%= t('sub_accounts.scrape.title') %></h2>
 
