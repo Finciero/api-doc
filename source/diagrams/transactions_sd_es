@@ -1,0 +1,11 @@
+sequenceDiagram
+    Cliente->>+API: Obtener Transacciones
+    API->>+Scraping: Comenzar proceso de obtención de datos
+    Scraping->>API: Ok
+    API->>Cliente: EL proceso de obtención de datos se ha iniciado
+    Note over API,Cliente: Estamos obteniendo la información solicitada de forma asíncrona.
+    loop Por cada sub cuenta
+      Scraping-->>-API: Transacciones de sub cuenta X
+      API-->>-Cliente: Lista de transacciones
+      Note over API,Cliente: El resultado es enviado al URL registrado por el cliente. Si ocurrió algo inesperado, un error es enviado en su lugar.
+    end

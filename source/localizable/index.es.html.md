@@ -21,9 +21,29 @@ search: true
 
 <h1 id="introduction">Introducción</h1>
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+El API de Finciero está diseñado a partir del estilo de arquitectura REST,
+lo que la hace predecible y fácil de usar. Además, sus respuestas hacen
+fuerte uso de los estados HTTP para identificar distintos tipos de  error.
+Cualquier interacción con el API retorna una JSON, incluyendo los errores.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Proximamente tendremos SDKs en distintos lenguajes, como ruby, golang y nodejs,
+para que la comunicación entre el API y sus aplicaciones sean aún más fácil de integrar.
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Actualmente nuestra API funciona de la siguiente manera:
 
+- Se le pide al API obtener la lista de cuentas.
+- El API responde indicando que se ha iniciado el proceso de obtención de datos.
+
+Luego de este punto, no hay más interacción por parte del cliente, ya que la duración
+del proceso es indeterminada, puede durar hasta 30 segundos, una vez que el API
+obtenga los datos, ya sea de manera exitosa o no, la información es enviada a un
+URL especificado por el cliente, conocidos como **callbacks**.
+
+Para transparentar el proceso, vea la siguiente figura:
+
+![Diagrama de secuencia, obtener sub cuentas](sub_accounts_sd_es.png)
+
+En el caso de pedir transacciones, el proceso puede demorar entre 30 segundos y 2 minutos,
+dependiendo la cantidad de transacciones contenidas en la cuenta especificada.
+
+![Diagrama de secuencia, obtener transacciones](transactions_sd_es.png)

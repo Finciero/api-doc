@@ -1,0 +1,11 @@
+sequenceDiagram
+    Client->>+API: Get Transactions
+    API->>+Scraping: Start scraping process
+    Scraping->>API: Ok
+    API->>Client: The scraping process has started
+    Note over API,Client: We are asynchronously getting your info
+    loop For each sub account
+      Scraping-->>-API: SubAccount X scraped transactions
+      API-->>-Client: Scraped transactions
+      Note over API,Client: The result is sent to client's registered Callback URL. If there was an error during the scraping process, an error will be sent instead.
+    end

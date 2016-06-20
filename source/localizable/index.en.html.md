@@ -21,9 +21,30 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Finciero's API is built around REST, making it predictable and easy to use.
+Our API responses make strong use of HTTP status codes in order to
+identify multiple kind of errors. Also, all our responses are JSON objects,
+including our errors.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We plan to have SDKs for multiple languages, like ruby, golang and nodejs,
+this will make the comunication between your application and our API easier.
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Currently our API works as follows:
 
+- Client requests the SubAccount list.
+- The API responds that the scraping process has started.
+
+After the last point, the client has no more to do, the scraping process is
+working asynchronously, so you can expect to receive the data, at most, 30 seconds
+after the scraping started. When the API receives the requested data from
+our scraping internal service, wether it has been successfully scraped or not,
+the information is sent to a URL specified by the client, knowns as **callbacks**.
+
+The following sequence diagram explains the above process:
+
+![Sequence Diagram, Scrape Sub Accounts](sub_accounts_sd_en.png)
+
+When requesting transactions, it can take from 30 seconds to 2 minutes, depending
+on how many transactions the scraped accounts has.
+
+![Sequence Diagram, Scrape Transactions](transactions_sd_en.png)
