@@ -14,17 +14,16 @@ toc_footers:
 includes:
   - authentication
   - sub_accounts
-  - transactions
   - errors
 
 search: true
 ---
 
-<h1 name="finciero">Finciero API</h1>
+<h1 id="introduction">Finciero API</h1>
 
-Finciero API es la principal plataforma para extraer datos bancarios. De acuerdo a los planes disponibles, se pueden obtener características adicionales sobre el conjunto de datos extraídos, [ver planes y características](https://api.finciero.com/planes)
+Finciero API es la principal plataforma para extraer datos bancarios. De acuerdo a los planes disponibles, se pueden obtener características adicionales sobre el conjunto de datos extraídos, [ver planes y características](https://api.finciero.com/planes).
 
-## <span name="overview">Visión general</span>
+<h2 id="overview">Visión general</h2>
 
 El API de Finciero está diseñado a partir del estilo de arquitectura [REST](https://es.wikipedia.org/wiki/Representational_State_Transfer),
 haciendo más intuitivo y fácil de usar. Además, sus respuestas hacen
@@ -48,18 +47,18 @@ dependiendo la cantidad de transacciones contenidas en la cuenta especificada.
 ![Diagrama de secuencia, obtener transacciones](transactions_sd_es.png)
 
 
-### <a name="concepts">Conceptos importantes</a>
+<h3 id="concepts">Conceptos importantes</h3>
 
   - **callbacks**: Es un endpoint/url, perteneciente al cliente, donde son entregados los datos extraídos por el API.
   - **scraper**: Es el encargado de efectuar los trabajos de extracción de datos.
   - **meta**: Es toda información adicional, no perteneciente al sistema enviada en las peticiones hacia el API.
 
-## <span name="structure">Estructura</span>
+<h2 id="structure">Estructura</h2>
 
 Este punto es explicado con mayor detalle en secciones posteriores, pero en general, **Finciero API** puede ser consumido por medio de peticiones HTTP del tipo POST.
 
-Todos los request son realizados a `https://api.finciero.com/`
+Todos los request son realizados a `<%= data.examples.url %>`
 
-## <span name="future">Trabajos futuros</span>
+<h2 id="future">Trabajos futuros</h2>
 
 Próximamente tendremos [SDKs](https://es.wikipedia.org/wiki/Kit_de_desarrollo_de_software) en distintos lenguajes, como ruby, golang, nodejs, entre otros, con el objectivo de hacer aún más simple la comunicación e intergración entre el API y sus aplicaciones.
