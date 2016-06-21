@@ -21,13 +21,13 @@ es:
     scrape:
       title: Obtener Subcuentas
       header: |
-        Para obtener la lista de cuentas de una cuenta bancaria, se debe 
+        Para obtener la lista de cuentas de una cuenta bancaria, se debe
         hacer la siguiente petición:
 
   authentication:
     title: Autenticación
     header: |
-      Cuanto utilizas nuestra API, debes autenticar tus peticiones incluyendo tu llave secreta (**API key**).
+      Cuando utilizas nuestra API, debes autenticar tus peticiones incluyendo tu llave secreta (**API key**).
       Puedes administrar tus llaves secretas desde tu Dashboard. Tus llaves secretas otorgan acceso
       a nuestro servicios, asi que asegúrate de de mantenerlas en secreto!
 
@@ -39,4 +39,3 @@ es:
     footer: |
       La autenticación con nuestra API se realiza por medio de **Bearer** Auth. Debes adjuntar tu API key
       dentro del header de autorización.
-
