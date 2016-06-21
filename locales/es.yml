@@ -10,7 +10,7 @@ es:
     header: |
       Una cuenta de un banco tiene una o múltiples sub cuentas, por ejemplo, una persona tiene una cuenta en el banco X,
       ésta cuenta a su vez, está compuesta por **una o varias** cuentas corrientes, líneas de crédito,
-      tarjetas de crédito nacionales o internacionales, etc, cada una de ellas es una **sub cuenta**..
+      tarjetas de crédito nacionales o internacionales, etc, cada una de ellas es una **sub cuenta**.
 
       Los tipos de sub cuentas son los siguientes:
 
