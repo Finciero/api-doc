@@ -18,13 +18,13 @@ es:
   - name: description
     description: Glosa/descripción de la transacción.
     type: string
-  - name: extended-description
+  - name: extended_description
     description: Descripción extra de la transacción, entrega más detalles sobre la compra.
     type: string
   - name: dues
     description: Cuotas, aplica para tarjetas de crédito. <a href="#transaction-dues">ver Dues</a>
     type: number
-  - name: interest-rate
+  - name: interest_rate
     description: Interes de las cuotas.
     type: number
   - name: serial
@@ -52,7 +52,7 @@ en:
   - name: description
     description: Glosa/descripción de la transacción.
     type: string
-  - name: extended-description
+  - name: extended_description
     description: Descripción extra de la transacción, entrega más detalles sobre la compra.
     type: string
   - name: dues
@@ -64,7 +64,7 @@ en:
   - name: dues.total
     description: Total de cuotas.
     type: number
-  - name: interest-rate
+  - name: interest_rate
     description: Interes de las cuotas.
     type: number
   - name: serial
