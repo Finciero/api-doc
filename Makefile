@@ -1,6 +1,6 @@
 all: server
 
-server:
+server: diagrams
 	@bundle exec middleman server
 
 diagrams:
