@@ -27,9 +27,9 @@ es:
   authentication:
     title: Autenticación
     header: |
-      Cuando utilizas nuestra API, debes autenticar tus peticiones incluyendo tu llave secreta (**API key**).
+      Cuando utilizas nuestra API, debes autenticar tus peticiones incluyendo tu llave secreta ([**API key**](#concepts)).
       Puedes administrar tus llaves secretas desde tu Dashboard. Tus llaves secretas otorgan acceso
-      a nuestro servicios, asi que asegúrate de de mantenerlas en secreto!
+      a nuestro servicios, asi que asegúrate de mantenerlas en secreto!
 
       No compartas tus API keys
       en aplicaciones con acceso público, como Github, código de cliente (Front-End), etc.
