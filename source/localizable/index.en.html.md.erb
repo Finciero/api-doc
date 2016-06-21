@@ -20,15 +20,12 @@ includes:
 search: true
 ---
 
-# Introduction
+<h1 id="introduction">Finciero API</h1>
 
-Finciero's API is built around REST, making it predictable and easy to use.
-Our API responses make strong use of HTTP status codes in order to
-identify multiple kind of errors. Also, all our responses are JSON objects,
-including our errors.
+Finciero's API is the primer platform to extract bank information. Accourding to our plans, the extracted data could be different output with more details. [see plans and features](https://api.finciero.com/pricing).
 
-We plan to have SDKs for multiple languages, like ruby, golang and nodejs,
-this will make the comunication between your application and our API easier.
+<h2 id="overview">Overview</h2>
+Finciero's API is built around [REST](https://en.wikipedia.org/wiki/Representational_State_Transfer), making it predictable and easy to use. Our API responses make strong use of HTTP status codes in order to identify multiple kind of errors. Also, all our responses are [JSON](http://json.com/) objects, including our errors.
 
 Currently our API works as follows:
 
@@ -49,3 +46,20 @@ When requesting transactions, it can take from 30 seconds to 2 minutes, dependin
 on how many transactions the scraped accounts has.
 
 ![Sequence Diagram, Scrape Transactions](transactions_sd_en.png)
+
+<h2 id="concepts">Concepts</h2>
+
+- **callbacks**: Basically is an `endpoint/url`, it belong to a customer and is where our API deliver the extracted data.
+- **scraper**: This is a program that handle the extraction logic.
+- **meta**: Any aditional data, this doesn't belong to our system, is related to the customer scope.
+
+<h2 id="structure">Estructura</h2>
+
+We cover this point in later sections, but in general, **Finciero API** can be consumed through HTTP requests, like POST or GET.
+
+All requests are made through `<%= data.examples.url %>`
+
+<h2 id="future">Future work</h2>
+
+We plan to have SDKs for multiple languages, like ruby, golang and nodejs,
+this will make the comunication between your application and our API easier.
