@@ -1,0 +1,23 @@
+<h1 id="banks">Bancos</h1>
+Lista de bancos soportados por Finciero API, para poder obtener datos de algunos de estos bancos. En las peticiones hacia el API, se debe enviar uno de los IDs mostrados en la siguiente tabla.
+
+<table>
+  <thead>
+    <th>Banco</th>
+    <th>Finciero ID</th>
+  </thead>
+  <tbody>
+    <% data.bank_list[I18n.locale].each do |attribute| %>
+    <tr>
+      <td> <%= attribute.bank %> </td>
+      <td>
+        <b><%= attribute.FinID %></b>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<aside class="notice">
+Ver ejemplo de utilización en sección <a href="#sub-accounts" style="color:#ffffff"><b>Subcuentas</b></a>
+</aside>
