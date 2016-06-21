@@ -14,36 +14,52 @@ toc_footers:
 includes:
   - authentication
   - sub_accounts
+  - transactions
   - errors
 
 search: true
 ---
 
-<h1 id="introduction">Introducción</h1>
+<h1 name="finciero">Finciero API</h1>
 
-El API de Finciero está diseñado a partir del estilo de arquitectura REST,
-lo que la hace predecible y fácil de usar. Además, sus respuestas hacen
-fuerte uso de los estados HTTP para identificar distintos tipos de  error.
-Cualquier interacción con el API retorna una JSON, incluyendo los errores.
+Finciero API es la principal plataforma para extraer datos bancarios. De acuerdo a los planes disponibles, se pueden obtener características adicionales sobre el conjunto de datos extraídos, [ver planes y características](https://api.finciero.com/planes)
 
-Proximamente tendremos SDKs en distintos lenguajes, como ruby, golang y nodejs,
-para que la comunicación entre el API y sus aplicaciones sean aún más fácil de integrar.
+## <span name="overview">Visión general</span>
 
-Actualmente nuestra API funciona de la siguiente manera:
+El API de Finciero está diseñado a partir del estilo de arquitectura [REST](https://es.wikipedia.org/wiki/Representational_State_Transfer),
+haciendo más intuitivo y fácil de usar. Además, sus respuestas hacen
+fuerte uso de los estados HTTP para identificar distintos tipos de respuestas exitosas o erroneas. Cualquier interacción con el API retorna como respuesta un objeto [JSON](http://json.com/), incluyendo los errores.
+
+Actualmente nuestra API funciona de la siguiente manera (lógica simplificada):
 
 - Se le pide al API obtener la lista de cuentas.
-- El API responde indicando que se ha iniciado el proceso de obtención de datos.
+  - Este proceso es ejecutado de forma asíncrona. Si es que existe algún error este es informado de forma síncrona ([Ver errores](#errors)).
+  - Si no existen errores al comenzar el proceso, el API responde indicando que se ha iniciado el proceso de obtención de datos.
 
-Luego de este punto, no hay más interacción por parte del cliente, ya que la duración
-del proceso es indeterminada, puede durar hasta 30 segundos, una vez que el API
-obtenga los datos, ya sea de manera exitosa o no, la información es enviada a un
-URL especificado por el cliente, conocidos como **callbacks**.
+Luego de este punto, no hay más interacción por parte del cliente, ya que la duración del proceso es indeterminada. La duración de este proceso puede tomar 30 segundos o más (para el caso de la lista de cuentas), esto está sujeto al funcionamiento de cada banco. Una vez que el API obtenga los datos, ya sea de manera exitosa o no, la información es enviada a un URL especificado por el cliente, conocidos como [**callbacks**](#concepts).
 
-Para transparentar el proceso, vea la siguiente figura:
+Para aclarar dudas sobre el proceso, éste se muestra en la siguiente figura:
 
-![Diagrama de secuencia, obtener sub cuentas](sub_accounts_sd_es.png)
+![Diagrama de secuencia, obtener subcuentas](sub_accounts_sd_es.png)
 
 En el caso de pedir transacciones, el proceso puede demorar entre 30 segundos y 2 minutos,
 dependiendo la cantidad de transacciones contenidas en la cuenta especificada.
 
 ![Diagrama de secuencia, obtener transacciones](transactions_sd_es.png)
+
+
+### <a name="concepts">Conceptos importantes</a>
+
+  - **callbacks**: Es un endpoint/url, perteneciente al cliente, donde son entregados los datos extraídos por el API.
+  - **scraper**: Es el encargado de efectuar los trabajos de extracción de datos.
+  - **meta**: Es toda información adicional, no perteneciente al sistema enviada en las peticiones hacia el API.
+
+## <span name="structure">Estructura</span>
+
+Este punto es explicado con mayor detalle en secciones posteriores, pero en general, **Finciero API** puede ser consumido por medio de peticiones HTTP del tipo POST.
+
+Todos los request son realizados a `https://api.finciero.com/`
+
+## <span name="future">Trabajos futuros</span>
+
+Próximamente tendremos [SDKs](https://es.wikipedia.org/wiki/Kit_de_desarrollo_de_software) en distintos lenguajes, como ruby, golang, nodejs, entre otros, con el objectivo de hacer aún más simple la comunicación e intergración entre el API y sus aplicaciones.
