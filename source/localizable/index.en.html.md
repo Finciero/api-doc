@@ -14,6 +14,7 @@ toc_footers:
 includes:
   - authentication
   - sub_accounts
+  - transactions
   - errors
 
 search: true
