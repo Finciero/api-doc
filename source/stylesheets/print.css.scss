@@ -144,4 +144,8 @@ body {
   aside.success:before {
     @extend %icon-ok-sign;
   }
+
+  aside.info:before {
+    @extend %icon-exclamation-sign;
+  }
 }
