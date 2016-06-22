@@ -16,12 +16,7 @@ Los metodos listados a continuación sirven solo para extraer transacciones, tan
       <td style="text-align: right; padding-bottom: 0px;">
         <b><%= attribute.name %></b>
         <br/>
-        <% if attribute.def != "" %>
-          <div style="font-size:11px; color: #808080;">
-            Defecto: <%= attribute.def %>
-          </div>
-        <% end %>
-        <div style="font-size:10px; color: #ffae54;">
+        <div style="font-size:11px; color: #ffae54;">
           <b>Tipo: <%= attribute.type %></b>
         </div>
       </td>
@@ -36,57 +31,44 @@ Los metodos listados a continuación sirven solo para extraer transacciones, tan
 - **Dues**: Término referido a las cuotas comerciales.
 - **Kind**: Este término se refiere al tipo de transacción encontrada al momento de extraer la información.
 
+<table align="center">
+  <thead>
+  <th>Dues</th>
+  <th>Descripción</th>
+  </thead>
+  <tbody>
+    <% data.transaction_dues[I18n.locale].each do |attribute| %>
+    <tr>
+      <td style="text-align: right;">
+        <b><%= attribute.name %></b>
+        <br/>
+        <div style="font-size:11px; color: #ffae54;">
+          <b>Tipo: <%= attribute.type %></b>
+        </div>
+      </td>
+      <td> <%= attribute.description %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <table>
-  <tr style="border-bottom: 0px solid #fff;">
-    <td style="padding: 0px;">
-      <table>
-        <thead>
-        <th>Dues</th>
-        <th>Descripción</th>
-        </thead>
-        <tbody>
-          <% data.transaction_dues[I18n.locale].each do |attribute| %>
-          <tr>
-            <td style="text-align: right;">
-              <b><%= attribute.name %></b>
-              <br/>
-              <% if attribute.def != "" %>
-                <div style="font-size:11px; color: #808080;">
-                  Defecto: <%= attribute.def %>
-                </div>
-              <% end %>
-              <div style="font-size:10px; color: #ffae54;">
-                <b>Tipo: <%= attribute.type %></b>
-              </div>
-            </td>
-            <td> <%= attribute.description %> </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </td>
-    <td></td>
-    <td style="padding: 0px;">
-      <table>
-        <thead>
-          <th>Kind</th>
-          <th>Descripción</th>
-        </thead>
-        <tbody>
-          <% data.transaction_kind[I18n.locale].each do |attribute| %>
-          <tr>
-            <td style="text-align: right;">
-              <b><%= attribute.name %></b>
-            </td>
-            <td>
-              <%= attribute.description %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </td>
-  </tr>
+  <thead>
+    <th>Kind</th>
+    <th>Descripción</th>
+  </thead>
+  <tbody>
+    <% data.transaction_kind[I18n.locale].each do |attribute| %>
+    <tr>
+      <td style="text-align: right;">
+        <b><%= attribute.name %></b>
+      </td>
+      <td>
+        <%= attribute.description %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <h2 id="scrape-current-transactions">Obtener Transacciones actuales</h2>
@@ -119,6 +101,11 @@ Para realizar una petición de este tipo, se deben enviar los siguientes datos. 
     <tr>
       <td style="text-align: right;">
         <b><%= attribute.name %></b>
+        <% if attribute.required == "true" %>
+          <div style="font-size:11px; color: #ffae54;">
+            <b>REQUERIDO</b>
+          </div>
+        <% end %>
       </td>
       <td> <%= attribute.description %> </td>
     </tr>
