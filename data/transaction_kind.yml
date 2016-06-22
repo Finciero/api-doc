@@ -1,0 +1,9 @@
+es:
+  - name: normal
+    description: Transacciones normales, sin cuotas
+  - name: due_cash
+    description: Cuota contado
+  - name: total_due
+    description: Cuota total
+  - name: due_commerce
+    description: Cuota comercio
