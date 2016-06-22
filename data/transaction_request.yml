@@ -1,10 +1,9 @@
----
 es:
   - name: username
-    description: Rut del usuario.
+    description: Rut del usuario
   - name: password
-    description: Clave del usuario, generalmente es la clave con la que los usuarios entran al portal de su banco.
+    description: Clave del usuario, generalmente es la clave con la que los usuarios entran al portal de su banco
   - name: bank
     description: ID del banco, lista de <a href="#banks">bancos</a>
   - name: meta
-    description: Información extra del cliente.
+    description: Información extra del cliente

@@ -22,7 +22,7 @@ search: true
 
 <h1 id="introduction">Finciero API</h1>
 
-Finciero's API is the primer platform to extract bank information. Accourding to our plans, the extracted data could be different output with more details. [see plans and features](https://api.finciero.com/pricing).
+Finciero's API is the primer platform to extract bank's information. According to our plans, the extracted data could be enriched, for more details [see plans and features](https://api.finciero.com/pricing).
 
 <h2 id="overview">Overview</h2>
 Finciero's API is built around [REST](https://en.wikipedia.org/wiki/Representational_State_Transfer), making it predictable and easy to use. Our API responses make strong use of HTTP status codes in order to identify multiple kind of errors. Also, all our responses are [JSON](http://json.com/) objects, including our errors.
@@ -49,15 +49,37 @@ on how many transactions the scraped accounts has.
 
 <h2 id="concepts">Concepts</h2>
 
-- **callbacks**: Basically is an `endpoint/url`, it belong to a customer and is where our API deliver the extracted data.
-- **scraper**: This is a program that handle the extraction logic.
-- **meta**: Any aditional data, this doesn't belong to our system, is related to the customer scope.
+- **callbacks**: Is basically an `endpoint/url`, it belongs to a customer and is where our API will deliver the extracted data.
+- **scraper**: This is a program that handles the extraction logic.
+- **meta**: Is a JSON object that contains any aditional data that is not directly relevant to work, like filters or even data related to your product/request.
 
-<h2 id="structure">Estructura</h2>
+If you want to send persistant information related to the data that your are requesting us to scrape, i.e., you want
+to identify that the transactions belongs to a user within your system,
+you can use a reserved key inside the **meta** JSON object called **client** by assigning the needed information, see example on the right side.
 
-We cover this point in later sections, but in general, **Finciero API** can be consumed through HTTP requests, like POST or GET.
+> ### Meta example
 
-All requests are made through `<%= data.examples.url %>`
+> Assign your json object to the `client` key inside `meta`.
+
+<% code('json') do%>
+{ 
+  "meta": {
+    "client": {
+      "email": "foo@test.com"
+    }
+  }
+}
+<% end %>
+
+In summary, the **client** key is reserved to you, you can add any json valid object and it'll be echoed back to you with each response related to the requested data.
+
+> More examples will be added soon.
+
+<h2 id="structure">Structure</h2>
+
+We cover this point in later sections, but in general, **Finciero API** can be consumed through HTTP requests.
+
+All requests are made through `<%= data.examples.url %>` url.
 
 <h2 id="future">Future work</h2>
 

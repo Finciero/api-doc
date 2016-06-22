@@ -1,82 +1,10 @@
 <h1 id="transactions">Transacciones</h1>
-Al igual que en las [subcuentas](#sub-accounts) estos metodos necesitan del **API Key** para poder ser utilizados. Cualquier tipo de petición no autorizada será rechazada de inmediato.
+Al igual que en las [subcuentas](#sub-accounts) estos métodos necesitan del **API Key** para poder ser utilizados. Cualquier tipo de petición no autorizada será rechazada de inmediato.
 
-Los metodos listados a continuación sirve solo para extraer transacciones, tanto desde las cartolas actuales como de las cartolas historicas del banco especificado. **Importante**: Dependiendo del banco, los [objeto transacción](#transaction-object) pueden tener todos los atributos o no, esto depende exclusivamente de cada banco y de la información que estos proveen a sus cliente.
-
-<h2 id="current">Transacciones actuales</h2>
-
-```shell
-$ curl <%= data.examples.url %>/scrape/current-transactions \
-  -H "Authorization: Bearer <%= t(:token_placeholder) %>" \
-  -d data[username]=<%= data.examples.username %> \
-  -d data[password]=<%= data.examples.password %> \
-  -d data[bank]=<%= data.examples.bank %> \
-  -d meta[client][my]="value"
-```
-
-Este endpoint entrega las transacciones pertenecientes a todos los movimientos del mes actual. Este metodo retorna un arreglo de [objecto transacción](#transaction-object).
-
-Para realizar un petición de este tipo, se deben enviar los siguientes datos. (ver ejemplo para mayor claridad):
-<table>
-  <thead>
-  <th> Parámetros </th>
-  <th></th>
-  </thead>
-  <tbody>
-    <% data.transaction_request[I18n.locale].each do |attribute| %>
-    <tr>
-      <td style="text-align: right;">
-        <b><%= attribute.name %></b>
-      </td>
-      <td> <%= attribute.description %> </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<b>Ver ejemplo al costado.</b>
-
-<h2 id="historic">Transacciones historicas</h2>
-
-```shell
-$ curl <%= data.examples.url %>/scrape/historic-transactions \
-  -H "Authorization: Bearer <%= t(:token_placeholder) %>" \
-  -d data[username]=<%= data.examples.username %> \
-  -d data[password]=<%= data.examples.password %> \
-  -d data[bank]=<%= data.examples.bank %> \
-  -d meta[client][my]="value"
-```
-
-Este endpoint entrega las transacciones pertenecientes a todos los movimientos pasados, sin tomar en consideración el mes actual. Este metodo retorna un arreglo de [objecto transacción](#transaction-object).
-
-Para realizar un petición de este tipo, se deben enviar los siguientes datos. ver ejemplo para mayor claridad:
-
-<table>
-  <thead>
-  <th>Parámetros</th>
-  <th></th>
-  </thead>
-  <tbody>
-    <% data.transaction_request[I18n.locale].each do |attribute| %>
-    <tr>
-      <td style="text-align: right;">
-        <b><%= attribute.name %></b>
-      </td>
-      <td> <%= attribute.description %> </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<b>Ver ejemplo al costado.</b>
-
-<aside class="warning">Dependiendo de la cantidad de transacciones que la cuenta contenga estos procesos pueden tardar entre 30 segundos y 2 minutos en finalizar, además están sujetos a la disponibilidad de los respectivos bancos.</aside>
-
-<h2 id="transaction-response">Respuestas</h2>
-
-Estructura del objecto JSON que representa las transacciones.
+Los metodos listados a continuación sirven solo para extraer transacciones, tanto desde cartolas actuales como históricas. **Importante**: Dependiendo del banco, las [transactiones](#transaction-object) pueden tener todos los atributos o no, dependiendo exclusivamente de cada banco y de la información que estos proveen a sus clientes.
 
 <h3 id="transaction-object">Objeto transacción</h3>
+
 <table>
   <thead>
   <th> <%= t(:attributes) %> </th>
@@ -111,3 +39,121 @@ Estructura del objecto JSON que representa las transacciones.
     <% end %>
   </tbody>
 </table>
+<h2 id="scrape-current-transactions">Obtener Transacciones actuales</h2>
+
+<blockquote>
+<p class="highlight shell">
+POST <span><%= data.examples.url %>/scrape/current-transactions</span>
+</p>
+</blockquote>
+
+```shell
+$ curl <%= data.examples.url %>/scrape/current-transactions \
+  -H "Authorization: Bearer <%= t(:token_placeholder) %>" \
+  -d data[username]=<%= data.examples.username %> \
+  -d data[password]=<%= data.examples.password %> \
+  -d data[bank]=<%= data.examples.bank %> \
+  -d meta[client][my]="value"
+```
+
+Este endpoint entrega las transacciones pertenecientes a todos los movimientos del mes actual. El resultado es un arreglo de [objectos transacción](#transaction-object).
+
+Para realizar un petición de este tipo, se deben enviar los siguientes datos. (ver ejemplo para mayor claridad):
+<table>
+  <thead>
+  <th> Parámetros </th>
+  <th></th>
+  </thead>
+  <tbody>
+    <% data.transaction_request[I18n.locale].each do |attribute| %>
+    <tr>
+      <td style="text-align: right;">
+        <b><%= attribute.name %></b>
+      </td>
+      <td> <%= attribute.description %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<b>Ver ejemplo al costado.</b>
+
+<h2 id="scrape-historic-transactions">Obtener Transacciones históricas</h2>
+
+<blockquote>
+<p class="highlight shell">
+POST <span><%= data.examples.url %>/scrape/historic-transactions</span>
+</p>
+</blockquote>
+
+```shell
+$ curl <%= data.examples.url %>/scrape/historic-transactions \
+  -H "Authorization: Bearer <%= t(:token_placeholder) %>" \
+  -d data[username]=<%= data.examples.username %> \
+  -d data[password]=<%= data.examples.password %> \
+  -d data[bank]=<%= data.examples.bank %> \
+  -d meta[client][my]="value"
+```
+
+Este endpoint entrega las transacciones pertenecientes a todos los movimientos pasados, sin tomar en consideración el mes actual. El resultado es un arreglo de [objectos transacción](#transaction-object).
+
+Para realizar un petición de este tipo, se deben enviar los siguientes datos. ver ejemplo para mayor claridad:
+
+<table>
+  <thead>
+  <th>Parámetros</th>
+  <th></th>
+  </thead>
+  <tbody>
+    <% data.transaction_request[I18n.locale].each do |attribute| %>
+    <tr>
+      <td style="text-align: right;">
+        <b><%= attribute.name %></b>
+      </td>
+      <td> <%= attribute.description %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<b>Ver ejemplo al costado.</b>
+
+<aside class="warning">Dependiendo de la cantidad de transacciones que la cuenta contenga, éstos procesos pueden tardar entre 30 segundos y 2 minutos en finalizar, además, están sujetos a la disponibilidad de los respectivos bancos.</aside>
+
+<h2 id="transaction-response">Respuestas</h2>
+
+Estructura del objecto JSON que representa las transacciones.
+
+<div class="highlight shell">
+<% code('json') do %>
+  {
+  "data": {
+    "sub_account": {
+      "name": "Cuenta Corriente",
+      "kind": "checking",
+      "currency": "national",
+      "balance": 737923,
+      "number": "000066949036"
+    },
+    "transactions": [
+      {
+        "date": "01/03/2016",
+        "kind": "normal",
+        "balance": 0,
+        "charge": 20000,
+        "deposit": 0,
+        "description": "Giro en Cajero Automático",
+        "extended_description": "",
+        "dues": {
+          "current": 1,
+          "total": 1,
+          "interest_rate": 0
+        },
+        "serial": "008481",
+        "usd": 0
+      }]
+    }
+  }
+<% end %>
+</div>
+
