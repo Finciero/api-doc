@@ -1,0 +1,75 @@
+---
+es:
+  - name: date
+    description: Fecha que indica cuando se realizó la transacción
+    type: string
+  - name: kind
+    description: Tipo de transacción
+    type: string
+  - name: balance
+    description: Balance del mes. Si este es cero significa que no está presente en la tabla de transacciones
+    type: number
+  - name: charge
+    description: Indica el monto de un gasto efectuado en la cuenta
+    type: number
+  - name: deposit
+    description: Indica el monto de un deposito hacia la cuenta
+    type: number
+  - name: description
+    description: Glosa/descripción de la transacción
+    type: string
+  - name: extended_description
+    description: Descripción extra de la transacción, entrega más detalles sobre la compra
+    type: string
+  - name: dues
+    description: Cuotas, aplica para tarjetas de crédito. <a href="#transaction-dues">ver Dues</a>
+    type: number
+  - name: interest_rate
+    description: Interes de las cuotas
+    type: number
+  - name: serial
+    description: Número único que identica las transacciones
+    type: string
+  - name: usd
+    description: Monto en dólares, aplica solo para tarjetas de crédito internacional
+    type: number
+en:
+  - name: date
+    description: Fecha que indica cuando se realizó la transacción
+    type: string
+  - name: kind
+    description: Tipo de transacción
+    type: string
+  - name: balance
+    description: Balance del mes. Si este es cero significa que no está presente en la tabla de transacciones
+    type: number
+  - name: charge
+    description: Indica el monto de un gasto efectuado en la cuenta
+    type: number
+  - name: deposit
+    description: Indica el monto de un deposito hacia la cuenta
+    type: number
+  - name: description
+    description: Glosa/descripción de la transacción
+    type: string
+  - name: extended_description
+    description: Descripción extra de la transacción, entrega más detalles sobre la compra
+    type: string
+  - name: dues
+    description: Cuotas, aplica para tarjetas de crédito
+    type: number
+  - name: dues.current
+    description: Cuota actual
+    type: number
+  - name: dues.total
+    description: Total de cuotas
+    type: number
+  - name: interest_rate
+    description: Interes de las cuotas
+    type: number
+  - name: serial
+    description: Número único que identica las transacciones
+    type: string
+  - name: usd
+    description: Monto en dólares, aplica solo para tarjetas de crédito internacional
+    type: number

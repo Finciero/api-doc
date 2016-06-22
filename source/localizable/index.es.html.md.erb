@@ -14,6 +14,8 @@ toc_footers:
 includes:
   - authentication
   - sub_accounts
+  - transactions
+  - banks
   - errors
 
 search: true
@@ -47,11 +49,12 @@ dependiendo la cantidad de transacciones contenidas en la cuenta especificada.
 ![Diagrama de secuencia, obtener transacciones](transactions_sd_es.png)
 
 
-<h2 id="concepts">Conceptos importantes</h3>
+<h2 id="concepts">Conceptos importantes</h2>
 
-  - **callbacks**: Es un endpoint/url, perteneciente al cliente, donde son entregados los datos extraídos por el API.
-  - **scraper**: Es el encargado de efectuar los trabajos de extracción de datos.
-  - **meta**: Es toda información adicional, no perteneciente al sistema enviada en las peticiones hacia el API.
+- **callbacks**: Es un endpoint/url, perteneciente al cliente, donde son entregados los datos extraídos por el API.
+- **scraper**: Es el encargado de efectuar los trabajos de extracción de datos.
+- **meta**: Es toda información adicional, no perteneciente al sistema enviada en las peticiones hacia el API.
+- **API Key**: Es un código que se pasa a través de un SDK o por medio de los headers HTTP a nuestra API, y permite autenticar e identificar si un cliente es valido dentro del sistema de Finciero.
 
 <h2 id="structure">Estructura</h2>
 

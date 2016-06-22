@@ -1,0 +1,14 @@
+es:
+  - name: current
+    description: Cuota actual.
+    type: number
+  - name: total
+    description: Total de cuotas.
+    type: number
+en:
+  - name: current
+    description: Current due.
+    type: number
+  - name: total
+    description: Total dues.
+    type: number

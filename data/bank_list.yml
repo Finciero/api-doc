@@ -1,0 +1,23 @@
+es:
+  - FinID: BancoSantander
+    bank: Banco Santander
+  - FinID: BancoDeChile
+    bank: Banco de Chile
+  - FinID: BBVA
+    bank: BBVA
+  - FinID: BancoCMRFalabella
+    bank: CMR Falabella
+  - FinID: BancoFalabella
+    bank: Banco Falabella
+  - FinID: BancoEstado
+    bank: Banco Estado
+  - FinID: BancoCorpbanca
+    bank: Banco Corpbanca
+  - FinID: BancoItau
+    bank: Banco Itau
+  - FinID: BICE
+    bank: Banco BICE
+  - FinID: BCI
+    bank: Banco BCI
+  - FinID: BancoTBanc
+    bank: Banco TBanc
