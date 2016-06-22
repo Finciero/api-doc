@@ -127,15 +127,7 @@ Estructura del objecto JSON que representa las transacciones.
 <div class="highlight shell">
 <% code('json') do %>
   {
-  "data": {
-    "sub_account": {
-      "name": "Cuenta Corriente",
-      "kind": "checking",
-      "currency": "national",
-      "balance": 737923,
-      "number": "000066949036"
-    },
-    "transactions": [
+  "data": [
       {
         "date": "01/03/2016",
         "kind": "normal",
@@ -144,15 +136,15 @@ Estructura del objecto JSON que representa las transacciones.
         "deposit": 0,
         "description": "Giro en Cajero Automático",
         "extended_description": "",
+        "sub_account_id": "1ef66376-38be-11e6-ac61-9e71128cae77",
         "dues": {
           "current": 1,
           "total": 1,
           "interest_rate": 0
         },
-        "serial": "008481",
         "usd": 0
-      }]
-    }
+      }
+    ]
   }
 <% end %>
 </div>
