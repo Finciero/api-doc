@@ -1,14 +1,20 @@
 es:
   - name: current
-    description: Cuota actual.
+    description: Cuota actual
     type: number
+    def: 1
   - name: total
-    description: Total de cuotas.
+    description: Total de cuotas
     type: number
+    def: 1
+  - name: interest_rate
+    description: Interés de cuotas
+    type: number
+    def: 0
 en:
   - name: current
-    description: Current due.
+    description: Current due
     type: number
   - name: total
-    description: Total dues.
+    description: Total dues
     type: number

@@ -4,10 +4,10 @@ es:
     description: Identifica únicamente a la sub cuenta
     type: string
   - name: name
-    description: Nombre de la sub cuenta.
+    description: Nombre de la sub cuenta
     type: string
   - name: kind
-    description: Tipo de sub cuenta.
+    description: Tipo de sub cuenta
     type: string
   - name: date
     description: Fecha que identifica el día y hora en que fue actualizada la sub cuenta
