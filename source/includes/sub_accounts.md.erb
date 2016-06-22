@@ -38,15 +38,3 @@ $ curl <%= data.examples.url %>/scrape/sub-accounts \
   -d data[bank]=<%= data.examples.bank %> \
   -d meta[client][my]="value"
 ```
-
-```ruby
-require 'finciero-api'
-
-api = Finciero::API::Client.new('<%= t(:token_placeholder) %>')
-bank_account = Finciero::BankAccount.new(
-  username: '<%= data.examples.username%>',
-  password: '<%= data.examples.password%>',
-  bank: '<%= data.examples.bank%>',
-)
-sub_accounts = api.sub_accounts(bank_account)
-```
