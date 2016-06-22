@@ -1,9 +1,13 @@
 es:
   - name: username
     description: Rut del usuario
+    required: "true"
   - name: password
     description: Clave del usuario, generalmente es la clave con la que los usuarios entran al portal de su banco
+    required: "true"
   - name: bank
     description: ID del banco, lista de <a href="#banks">bancos</a>
+    required: "true"
   - name: meta
     description: Información extra del cliente
+    required: "false"
