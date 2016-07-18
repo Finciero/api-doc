@@ -34,7 +34,7 @@ Actualmente nuestra API funciona de la siguiente manera (lógica simplificada):
   - Este proceso es ejecutado de forma asíncrona. Si es que existe algún error este es informado de forma síncrona ([Ver errores](#errors)).
   - Si no existen errores al comenzar el proceso, el API responde indicando que se ha iniciado el proceso de obtención de datos.
 
-Luego de este punto, no hay más interacción por parte del cliente, ya que la duración del proceso es indeterminada. La duración de este proceso puede tomar 30 segundos o más (para el caso de la lista de cuentas), esto está sujeto al funcionamiento de cada banco. Una vez que el API obtenga los datos, ya sea de manera exitosa o no, la información es enviada a un URL especificado por el cliente, conocidos como [**callbacks**](#concepts).
+Luego de este punto, no hay más interacción por parte del cliente, ya que la duración del proceso es indeterminada. La duración de este proceso puede tomar 30 segundos o más (para el caso de la lista de cuentas), esto está sujeto al funcionamiento de cada banco. Una vez que el API obtenga los datos, ya sea de manera exitosa o no, la información es enviada a un URL especificado por el cliente, conocidos como [**callbacks** o **webhooks**](#concepts).
 
 Para aclarar dudas sobre el proceso, éste se muestra en la siguiente figura:
 
@@ -48,7 +48,7 @@ dependiendo la cantidad de transacciones contenidas en la cuenta especificada.
 
 <h2 id="concepts">Conceptos importantes</h2>
 
-- **callbacks**: Es un endpoint/url, perteneciente al cliente, donde son entregados los datos extraídos por el API.
+- **callbacks** o **webhooks**: Es un endpoint/url, perteneciente al cliente, donde son entregados los datos extraídos por el API.
 - **scraper**: Es el encargado de efectuar los trabajos de extracción de datos.
 - **meta**: Es toda información adicional, no perteneciente al sistema enviada en las peticiones hacia el API.
 - **API Key**: Es un código que se pasa a través de un SDK o por medio de los headers HTTP a nuestra API, y permite autenticar e identificar si un cliente es valido dentro del sistema de Finciero.
