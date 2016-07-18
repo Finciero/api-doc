@@ -20,7 +20,7 @@ es:
     type: string
   - name: balance
     description: Balance de la cuenta
-    type: string
+    type: float
 en:
   - name: id
     description: Unique identifier for the sub account
@@ -42,4 +42,4 @@ en:
     type: string
   - name: balance
     description: Account's balance
-    type: string
+    type: float

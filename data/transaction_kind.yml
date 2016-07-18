@@ -7,3 +7,12 @@ es:
     description: Cuota total
   - name: due_commerce
     description: Cuota comercio
+en:
+  - name: normal
+    description: Tipical transaction
+  - name: due_cash
+    description: Due cash transaction
+  - name: total_due
+    description: Total due transaction
+  - name: due_commerce
+    description: Due commerce transaction

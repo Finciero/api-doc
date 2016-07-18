@@ -11,3 +11,16 @@ es:
   - name: meta
     description: Información extra del cliente
     required: "false"
+en:
+  - name: username
+    description: Bank username
+    required: "true"
+  - name: password
+    description: Bank password
+    required: "true"
+  - name: bank
+    description: Bank ID from our <a href="#banks">bank list</a>
+    required: "true"
+  - name: meta
+    description: Client optional data
+    required: "false"

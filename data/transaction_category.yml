@@ -1,0 +1,20 @@
+es:
+  - name: id
+    description: Identificador de nuestra categoría
+    type: number
+  - name: name
+    description: Nombre de la categoría
+    type: string
+  - name: score
+    description: Qué tan seguros estamos con nuestra predicción. Toma valores entre 0 y 1
+    type: float
+en:
+  - name: id
+    description: Category identifier
+    type: number
+  - name: name
+    description: Category name
+    type: string
+  - name: score
+    description: Represents how confident we are with our prediction. The value goes from 0 to 1
+    type: float

@@ -71,6 +71,34 @@ Los metodos listados a continuación sirven solo para extraer transacciones, tan
   </tbody>
 </table>
 
+<h3 id="transaction-category">Category</h3>
+
+Dependiendo de tu plan, puedes tener acceso al atributo **category**.
+Finciero categoriza automáticamente las transacciones en base a su glosa.
+Ésto objeto, entrega el resultado de nuestra sugerencia y contiene los
+siguientes atributos:
+
+<table align="center">
+  <thead>
+  <th>Category</th>
+  <th>Descripción</th>
+  </thead>
+  <tbody>
+    <% data.transaction_category[I18n.locale].each do |attribute| %>
+    <tr>
+      <td style="text-align: right;">
+        <b><%= attribute.name %></b>
+        <br/>
+        <div style="font-size:11px; color: #ffae54;">
+          <b>Tipo: <%= attribute.type %></b>
+        </div>
+      </td>
+      <td> <%= attribute.description %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <h2 id="scrape-current-transactions">Obtener Transacciones actuales</h2>
 
 <blockquote>

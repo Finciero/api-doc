@@ -1,20 +1,20 @@
 es:
   - name: current
     description: Cuota actual
-    type: number
-    def: 1
+    type: integer
   - name: total
     description: Total de cuotas
-    type: number
-    def: 1
+    type: integer
   - name: interest_rate
     description: Interés de cuotas
-    type: number
-    def: 0
+    type: float
 en:
   - name: current
     description: Current due
-    type: number
+    type: integer
   - name: total
     description: Total dues
-    type: number
+    type: integer
+  - name: interest_rate
+    description: Due interest rate
+    type: float
